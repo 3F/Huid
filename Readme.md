@@ -11,6 +11,8 @@ Huid.NewGuid
 
 ![](benchmark.png)
 
+![](benchmark.inf.png)
+
 *(1 ns = 0.000000001 sec)*
 
 **\+** ✔ Compatible with .NET [System.Guid](https://docs.microsoft.com/en-us/dotnet/api/system.guid).

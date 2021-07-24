@@ -33,9 +33,9 @@ namespace net.r_eg.hashing.Tests
         /*
         |                  Method |       Mean |    Error |   StdDev |
         |------------------------ |-----------:|---------:|---------:|
-        |            GuidUsingMd5 | 5,225.6 ns | 43.64 ns | 40.82 ns |
-        |           GuidUsingSha1 | 5,319.7 ns | 31.59 ns | 29.55 ns |
-        | GuidUsingFnv1a128LX4Cnh |   584.7 ns |  1.25 ns |  1.17 ns |
+        |            GuidUsingMd5 | 4,893.5 ns | 17.60 ns | 15.60 ns |
+        |           GuidUsingSha1 | 5,127.9 ns | 29.52 ns | 24.65 ns |
+        | GuidUsingFnv1a128LX4Cnh |   568.2 ns |  2.30 ns |  2.15 ns |
        */
 
         private const string MSG = "LodgeX4CorrNoHigh (LX4Cnh) algorithm of the high-speed multiplications of 128-bit numbers";
