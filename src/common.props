@@ -1,0 +1,34 @@
+﻿<Project>
+
+  <PropertyGroup>
+    <RootOutDir>bin\prj\</RootOutDir>
+    <RootObjDir>bin\obj\</RootObjDir>
+
+    <OsUnixLike>false</OsUnixLike>
+    <OsUnixLike Condition="$([MSBuild]::IsOsUnixLike())">true</OsUnixLike>
+
+    <NetStdTFM>netstandard2.0</NetStdTFM>
+    <NetStdTFM Condition="$(SuppressNetStdTFM) == 'true'"></NetStdTFM>
+
+    <NetCoreTFM>netcoreapp2.1;net5</NetCoreTFM>
+
+    <HuidTFM>net40;net472;$(NetCoreTFM);$(NetStdTFM)</HuidTFM>
+    <HuidTFM Condition="$(OsUnixLike) == 'true'">$(NetCoreTFM);$(NetStdTFM)</HuidTFM>
+
+    <HuidTestTFM>net472;$(NetCoreTFM)</HuidTestTFM>
+    <HuidTestTFM Condition="$(OsUnixLike)=='true'">$(NetCoreTFM)</HuidTestTFM>
+
+    <HuidSnk>..\com.github.3F.snk</HuidSnk>
+    <HuidSnkTest>..\..\com.github.3F.test.snk</HuidSnkTest>
+
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutPrjDir>$(RootOutDir)$(MSBuildProjectName)\$(Configuration)\$(TargetFramework)\</OutPrjDir>
+    <IntermediateOutputPath>..\$(RootObjDir)$(MSBuildProjectName)\$(Configuration)\</IntermediateOutputPath>
+
+    <OutputPath>..\$(OutPrjDir)\</OutputPath>
+    <OutDir>$([MSBuild]::Escape($([System.IO.Path]::GetFullPath(`$([System.IO.Path]::Combine(`$(SolutionDir)`, `$(OutPrjDir)`))`))))</OutDir>
+  </PropertyGroup>
+
+</Project>

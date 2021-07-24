@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\common.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>$(HuidTFM)</TargetFrameworks>
+    <RootNamespace>net.r_eg.hashing</RootNamespace>
+    <AssemblyName>Huid</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(HuidSnk)</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Huid</PackageId>
+    <Copyright>Copyright (c) 2021  Denis Kuzmin &lt;x-3F@outlook.com&gt; github/3F</Copyright>
+    <Title>[ Huid ] High-speed a FNV-1a-128 (LX4Cnh) hash-based UUID.</Title>
+    <Description>High-speed a FNV-1a-128 (LX4Cnh) hash-based UUID.
+
+    ✔ Compatible with .NET System.Guid.
+    ✔ Free and Open.
+
+    Huid = 584.7 ns
+        
+    GuidUsingMd5  = 5,225.6 ns
+    GuidUsingSha1 = 5,319.7 ns
+
+    (1 ns = 0.000000001 sec)
+
+    https://github.com/3F/Huid
+    </Description>
+    <PackageOwners>reg</PackageOwners>
+    <PackageProjectUrl>https://github.com/3F/Huid</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/3F/Huid</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>UUID FNV FNV1a FNV1a128 dotnet Guid speed LX4Cnh algorithms opensource Huid</PackageTags>
+    <PackageReleaseNotes> changelog: https://github.com/3F/Huid/blob/master/changelog.txt </PackageReleaseNotes>
+    <Authors>github.com/3F/Huid</Authors>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Default</AnalysisMode>
+    <NoWarn>1701;1702;CS1591;IDE1006</NoWarn>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <IsNetCoreFamilyTarget>true</IsNetCoreFamilyTarget>
+    <IsNetCoreFamilyTarget Condition="$(TargetFramework.StartsWith('net4')) == 'true'">false</IsNetCoreFamilyTarget>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>DEBUG;TRACE;$(DefineConstants)</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' Or '$(Configuration)' == 'PublicRelease' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <NoDefaultExcludes>true</NoDefaultExcludes> <!-- NU5119: ..\.version -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\License.txt" Pack="true" PackagePath="" />
+    <None Include="..\..\Readme.md" Pack="true" PackagePath="" />
+    <!-- <None Include="..\..\3rd-party-notices.txt" Pack="true" PackagePath="" /> -->
+    <None Include="..\..\changelog.txt" Pack="true" PackagePath="" />
+    <!-- <None Include="..\..\.version" Pack="true" PackagePath="" /> -->
+    <!-- <None Include="..\..\$(RootObjDir)\build-info.txt" Condition="Exists('..\$(RootObjDir)\build-info.txt')" Pack="true" PackagePath="" /> -->
+  </ItemGroup>
+
+</Project>
