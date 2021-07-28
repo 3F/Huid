@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\common.props" />
+  <Import Project="..\..\..\common.props" />
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,8 +7,11 @@
     <RootNamespace>net.r_eg.hashing.Tests</RootNamespace>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(HuidSnkTest)</AssemblyOriginatorKeyFile>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <NoWarn>1701;1702;IDE0059</NoWarn>
   </PropertyGroup>
 
@@ -17,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Huid\Huid.csproj" />
+    <ProjectReference Include="..\..\..\csharp\Huid.csproj" />
   </ItemGroup>
 
 </Project>

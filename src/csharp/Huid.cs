@@ -24,13 +24,14 @@
 */
 
 using System;
+using net.r_eg.algorithms;
 
 namespace net.r_eg.hashing
 {
     /// <summary>
-    /// High-speed a FNV-1a-128 (LX4Cnh) hash-based UUID.
+    /// High-speed a FNV-1a-128 (*LX4Cnh) hash-based UUID.
     /// </summary>
-    /// <remarks>https://twitter.com/github3F/status/1416518052770992132</remarks>
+    /// <remarks>*https://github.com/3F/LX4Cnh </remarks>
     public static class Huid
     {
         public const ulong NS_HUID_H = 0x8296d91cb090857a;

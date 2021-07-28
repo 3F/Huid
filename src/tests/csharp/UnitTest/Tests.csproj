@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\..\common.props" />
+  <Import Project="..\..\..\common.props" />
 
   <PropertyGroup>
     <TargetFrameworks>$(HuidTestTFM)</TargetFrameworks>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Huid\Huid.csproj" />
+    <ProjectReference Include="..\..\..\csharp\Huid.csproj" />
   </ItemGroup>
 
 </Project>

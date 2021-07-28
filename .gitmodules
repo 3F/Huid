@@ -1,0 +1,6 @@
+[submodule "src/Fnv1a128"]
+	path = src/Fnv1a128
+	url = https://github.com/3F/Fnv1a128.git
+[submodule "src/LX4Cnh"]
+	path = src/LX4Cnh
+	url = https://github.com/3F/LX4Cnh.git

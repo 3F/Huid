@@ -19,7 +19,7 @@
     <HuidTestTFM Condition="$(OsUnixLike)=='true'">$(NetCoreTFM)</HuidTestTFM>
 
     <HuidSnk>..\com.github.3F.snk</HuidSnk>
-    <HuidSnkTest>..\..\com.github.3F.test.snk</HuidSnkTest>
+    <HuidSnkTest>..\..\..\com.github.3F.test.snk</HuidSnkTest>
 
   </PropertyGroup>
 

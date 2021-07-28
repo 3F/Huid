@@ -2,11 +2,29 @@
   <Import Project="..\common.props" />
 
   <PropertyGroup>
+    <Version>1.0.0</Version>
+    <BuildInfoVSSBE></BuildInfoVSSBE>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <TargetFrameworks>$(HuidTFM)</TargetFrameworks>
     <RootNamespace>net.r_eg.hashing</RootNamespace>
     <AssemblyName>Huid</AssemblyName>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>$(HuidSnk)</AssemblyOriginatorKeyFile>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <AnalysisMode>Default</AnalysisMode>
+    <NoWarn>1701;1702;CS1591;IDE1006</NoWarn>
+    <LangVersion>latest</LangVersion>
+    <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Huid</PackageId>
     <Copyright>Copyright (c) 2021  Denis Kuzmin &lt;x-3F@outlook.com&gt; github/3F</Copyright>
@@ -14,7 +32,7 @@
     <Description>High-speed a FNV-1a-128 (LX4Cnh) hash-based UUID.
 
     ✔ Compatible with .NET System.Guid.
-    ✔ Free and Open.
+    ✔ Free and Open. https://github.com/3F/Huid
 
     Huid = 584.7 ns
         
@@ -23,23 +41,22 @@
 
     (1 ns = 0.000000001 sec)
 
-    https://github.com/3F/Huid
+    =======================================
+    gnt /p:ngpackages="LX4Cnh/$(Version)"
+    ================== https://github.com/3F/GetNuTool
+
+    $(BuildInfoVSSBE)
     </Description>
     <PackageOwners>reg</PackageOwners>
     <PackageProjectUrl>https://github.com/3F/Huid</PackageProjectUrl>
     <RepositoryUrl>https://github.com/3F/Huid</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>UUID FNV FNV1a FNV1a128 dotnet Guid speed LX4Cnh algorithms opensource Huid</PackageTags>
+    <PackageTags>UUID hashing FNV FNV1a FNV1a128 hash dotnet Guid identifier speed LX4Cnh algorithms identifiers opensource Huid</PackageTags>
     <PackageReleaseNotes> changelog: https://github.com/3F/Huid/blob/master/changelog.txt </PackageReleaseNotes>
     <Authors>github.com/3F/Huid</Authors>
     <DocumentationFile>$(OutputPath)$(AssemblyName).xml</DocumentationFile>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseFile>License.txt</PackageLicenseFile>
-    <EnableNETAnalyzers>true</EnableNETAnalyzers>
-    <AnalysisLevel>latest</AnalysisLevel>
-    <AnalysisMode>Default</AnalysisMode>
-    <NoWarn>1701;1702;CS1591;IDE1006</NoWarn>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -64,12 +81,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\Fnv1a128\src\csharp\Fnv1a128.cs" />
+    <Compile Include="..\LX4Cnh\src\csharp\LX4Cnh.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\License.txt" Pack="true" PackagePath="" />
     <None Include="..\..\Readme.md" Pack="true" PackagePath="" />
-    <!-- <None Include="..\..\3rd-party-notices.txt" Pack="true" PackagePath="" /> -->
+    <None Include="..\..\3rd-party-notices.txt" Pack="true" PackagePath="" />
     <None Include="..\..\changelog.txt" Pack="true" PackagePath="" />
-    <!-- <None Include="..\..\.version" Pack="true" PackagePath="" /> -->
-    <!-- <None Include="..\..\$(RootObjDir)\build-info.txt" Condition="Exists('..\$(RootObjDir)\build-info.txt')" Pack="true" PackagePath="" /> -->
+    <None Include="..\..\.version" Pack="true" PackagePath="" />
+    <None Include="..\$(RootObjDir)\build-info.txt" Condition="Exists('..\$(RootObjDir)\build-info.txt')" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.tools\gnt.bat" Pack="true" PackagePath="tools\" Visible="false" />
   </ItemGroup>
 
 </Project>
