@@ -1,6 +1,6 @@
 # [Huid](https://github.com/3F/Huid)
 
-High-speed a [FNV-1a-**128**](https://github.com/3F/Fnv1a128) (\<-[LX4Cnh](https://github.com/3F/LX4Cnh)) hash-based **UUID** implementations.
+High-speed a [FNV-1a-**128**](https://github.com/3F/Fnv1a128) (\<-[LX4Cnh](https://github.com/3F/LX4Cnh)) hash-based **UUID**.
 
 ```r
 Copyright (c) 2021  Denis Kuzmin <x-3F@outlook.com> github/3F

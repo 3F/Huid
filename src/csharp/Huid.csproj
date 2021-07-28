@@ -42,7 +42,7 @@
     (1 ns = 0.000000001 sec)
 
     =======================================
-    gnt /p:ngpackages="LX4Cnh/$(Version)"
+    gnt /p:ngpackages="Huid/$(Version)"
     ================== https://github.com/3F/GetNuTool
 
     $(BuildInfoVSSBE)

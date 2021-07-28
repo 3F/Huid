@@ -3,6 +3,10 @@ Huid - https://github.com/3F/Huid
 - - - - - - - - - - - - - - - - - - - 
 
 
-[-not-released] 2021.??.??
+[1.0] 2021.07.29
 
     * Initial public release.
+      High-speed a FNV-1a-128 (<-LX4Cnh) hash-based UUID.
+      
+      https://github.com/3F/LX4Cnh
+      https://github.com/3F/Fnv1a128
